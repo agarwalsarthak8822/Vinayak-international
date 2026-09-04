@@ -1,0 +1,6 @@
+import { ArrowLeft, SearchX } from "lucide-react";
+import { Link } from "wouter";
+
+export default function NotFound() {
+  return <main className="mx-auto flex min-h-[68vh] max-w-[1000px] items-center px-5 py-20"><div className="grid w-full gap-10 border-y border-[#ddd5c7] py-14 md:grid-cols-[.7fr_1.3fr] md:items-center"><div className="font-mono text-[clamp(7rem,18vw,13rem)] leading-none tracking-[-.1em] text-[#bf7e2e]">404</div><div><SearchX size={26} className="text-[#bf7e2e]" /><p className="eyebrow mt-5 text-[#bf7e2e]">This detail is missing</p><h1 className="mt-3 font-display text-4xl md:text-5xl">The page could not be found.</h1><p className="mt-4 max-w-md text-sm leading-7 text-[#74695e]">The address may have changed. Return to the collection and find the hardware you need.</p><Link href="/products" className="mt-8 inline-flex items-center gap-3 bg-[#bf7e2e] px-5 py-3 text-xs font-bold uppercase tracking-[.12em]" data-testid="link-404-catalog"><ArrowLeft size={16} /> Return to catalog</Link></div></div></main>;
+}

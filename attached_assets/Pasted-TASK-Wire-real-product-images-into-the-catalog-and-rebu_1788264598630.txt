@@ -1,0 +1,35 @@
+TASK: Wire real product images into the catalog and rebuild the product data. Do NOT change any design, layout, styling, routing, or component code.
+
+CONTEXT
+- This is a pnpm workspace monorepo. The live app is the package @workspace/guidelocks at artifacts/guidelocks/.
+- I have uploaded a folder named `vinayak-product-images` containing 9 subfolders, one per product category. Each subfolder is named exactly with the category slug, and every image inside is named by its product code (e.g. door-knockers/3411 A.png). Some codes contain spaces — keep them.
+- The 9 slug folders are: door-knockers, brass-door-furniture, casement-stay-fasteners, cabinet-hardware, curtain-tie-back, symbol-plaques, coat-hooks, alpha-numerals, artware.
+
+STEP 1 — Copy images
+- For each subfolder, copy every image file (.png .jpg .jpeg .webp .avif .gif) into:
+  artifacts/guidelocks/public/products/<slug>/<original-filename>
+  so it serves at the URL /products/<slug>/<original-filename>.
+- Preserve filenames EXACTLY (including spaces and case). Do not rename, resize, or re-encode.
+- Do NOT delete or modify the existing artifacts/guidelocks/public/products/raw/ folder — the categories array still references those images.
+
+STEP 2 — Rebuild artifacts/guidelocks/src/data/products.ts
+- Keep the `interface Product`, the `categories` array (unchanged — same slugs, names, order, and every other field), and the `categorySlug` and `productByCode` helper functions exactly as they are.
+- Replace ONLY the `products` array (and remove the now-unused local code arrays like brassCodes/casementCodes/knockerCodes).
+- Generate the new `products` array from the copied folders:
+  * One product per image file.
+  * code  = filename without its extension, spaces preserved (e.g. "3411 A").
+  * image = "/products/<slug>/<filename-with-extension>".
+  * category = the `name` field of the entry in the existing `categories` array whose `slug` equals the folder name. Read it from that array — do NOT hardcode the names.
+  * Emit categories in the same order as the `categories` array, and within each category sort products by `code` using a numeric-aware compare (localeCompare with { numeric: true }) so "3402" comes before "3411 A".
+- This fully replaces the outdated current entries.
+
+STEP 3 — Do NOT touch anything else
+- Do not edit App.tsx, any component, CSS/Tailwind, routing, or config beyond products.ts. Product cards already render product.image and product.code, so no component changes are needed.
+
+STEP 4 — Guarantee it installs, builds, and runs with NO Windows or Linux native-binary errors
+- Keep the win32 entries in artifacts/guidelocks/package.json `optionalDependencies` (@rollup/rollup-win32-x64-msvc, @tailwindcss/oxide-win32-x64-msvc, lightningcss-win32-x64-msvc) — they are required for my local Windows dev. Do not remove or change their versions.
+- Install with a fresh, NON-frozen install so this Linux environment resolves its own native binaries: run `pnpm install --no-frozen-lockfile` (never `--frozen-lockfile`, never `npm ci`).
+- If you hit ANY native-binary error (e.g. "Cannot find module @rollup/rollup-linux-x64-gnu", or a lightningcss / @tailwindcss/oxide missing-binary error), delete node_modules and pnpm-lock.yaml, then run `pnpm install` again so the correct per-OS binaries resolve. Do not pin or hand-edit binaries.
+- Verify before finishing: `pnpm --filter @workspace/guidelocks run build` completes with no errors, and `pnpm --filter @workspace/guidelocks run dev` starts cleanly. Confirm a few product images load at their /products/<slug>/<file> URLs.
+
+Report what you changed: number of products generated per category, and confirmation that the build passed with no native-binary errors.
