@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "GuideLocks Security Solutions"
+description = "A premium product catalog and enquiry website for GUIDELOCKS by Vinayak International, showcasing security hardware with responsive browsing, product detail pages, quote requests, and WhatsApp enquiry flows."
+version = "1.0.0"
+id = "artifacts/guidelocks"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22170
+
+[services.development]
+run = "pnpm --filter @workspace/guidelocks run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/guidelocks", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/guidelocks/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22170"
+BASE_PATH = "/"

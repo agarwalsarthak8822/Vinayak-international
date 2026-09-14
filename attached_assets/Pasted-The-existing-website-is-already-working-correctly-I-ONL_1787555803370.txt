@@ -1,0 +1,277 @@
+The existing website is already working correctly.
+
+I ONLY want the following specific changes.
+
+IMPORTANT:
+DO NOT rebuild the website.
+DO NOT redesign the website.
+DO NOT change the existing layout, colors, fonts, spacing, animations, product catalog, product images, product codes, search, filters, routes, forms, WhatsApp functionality, responsive behavior, or any other existing functionality.
+
+Make ONLY the changes listed below.
+
+==================================================
+CHANGE 1 — FOOTER SOCIAL/CONTACT ICONS
+======================================
+
+In the existing footer, there is currently a row of social media icons similar to the attached screenshot.
+
+Keep the existing footer design exactly the same:
+
+* Same icon box size
+* Same border
+* Same spacing
+* Same background
+* Same gold/orange icon color
+* Same hover effects
+* Same alignment
+
+Only modify/add the required icons and links.
+
+---
+
+## INSTAGRAM ACCOUNT 1
+
+Add an Instagram icon for:
+
+https://www.instagram.com/vinayak.international12?igsh=Y2JiYmpjbWE5dW5x
+
+When the user clicks this Instagram icon:
+
+→ Open the above Instagram profile.
+
+Use:
+
+target="_blank"
+rel="noopener noreferrer"
+
+so it opens safely in a new browser tab.
+
+---
+
+## INSTAGRAM ACCOUNT 2
+
+Add a SECOND Instagram icon for:
+
+https://www.instagram.com/vinayakinternational12?igsh=MWJwMXJncHBldW9lMg%3D%3D
+
+When the user clicks this Instagram icon:
+
+→ Open the above Instagram profile.
+
+Use:
+
+target="_blank"
+rel="noopener noreferrer"
+
+so it opens safely in a new browser tab.
+
+IMPORTANT:
+
+These are TWO DIFFERENT Instagram accounts.
+
+Do NOT merge them into one link.
+
+There must be two separate clickable Instagram icons.
+
+---
+
+## EMAIL ICON
+
+Add an email icon in the same footer icon style.
+
+Email:
+
+[info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+When the user clicks the email icon, it must open the user's default email application using:
+
+mailto:info@vinayakexports.com
+
+Do NOT make the email icon a dead button.
+
+The email icon should visually match the existing social icons.
+
+==================================================
+ICON ORDER
+==========
+
+Use this order in the footer:
+
+Instagram
+Instagram
+Email
+Facebook
+LinkedIn
+YouTube
+
+However, if the existing footer already contains Facebook, LinkedIn and YouTube icons, preserve their current positions and styling as much as possible.
+
+The two Instagram accounts must be clearly separate clickable icons.
+
+Add accessible labels/tooltips where appropriate:
+
+Instagram — Vinayak International
+Instagram — Vinayak International
+Email — [info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+Use Lucide React icons or the existing icon library already used by the project.
+
+Do NOT install a new icon library if the project already has an appropriate icon library.
+
+==================================================
+CHANGE 2 — BRAND NAME
+=====================
+
+Change the customer-facing website brand name everywhere from:
+
+GUIDELOCKS
+
+to:
+
+Vinayak International
+
+The new displayed brand should be:
+
+Vinayak International
+
+IMPORTANT:
+
+Only change the branding/name.
+
+Do NOT change:
+
+* Company contact information
+* Product codes
+* Product images
+* Product categories
+* Product data
+* Product functionality
+* URLs/routes
+* Search
+* Filters
+* Forms
+* WhatsApp functionality
+* Existing UI design
+
+Wherever "GUIDELOCKS" is displayed as the website/company brand, replace it with:
+
+Vinayak International
+
+Examples of places to check:
+
+* Navbar logo/brand text
+* Footer logo/brand text
+* Hero section if GUIDELOCKS appears there
+* Browser page title if it says GUIDELOCKS
+* Any visible branding text
+* Mobile navigation
+* Any relevant metadata/site title
+
+Do NOT blindly replace text inside unrelated product/catalog information.
+
+==================================================
+CHANGE 3 — FOOTER CONTACT INFORMATION
+=====================================
+
+Make sure the footer continues to display:
+
+Vinayak International
+
+Security Solutions
+
+Email:
+
+[info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+Phone:
+
++91 9897627670
+
+Do not change these values.
+
+==================================================
+IMPORTANT: DO NOT BREAK ANYTHING
+================================
+
+The current website is already functioning.
+
+Therefore:
+
+DO NOT:
+
+* Rewrite components unnecessarily
+* Change the CSS architecture
+* Change Tailwind configuration
+* Change routing
+* Change product data
+* Change PDF/catalog handling
+* Change product images
+* Change product codes
+* Change search logic
+* Change filter logic
+* Change WhatsApp logic
+* Change contact forms
+* Change quote forms
+* Change responsive behavior
+* Change animations
+* Change colors
+* Change typography
+* Change spacing
+* Change page structure
+
+Only edit the minimum files/components necessary to implement these changes.
+
+==================================================
+IMPLEMENTATION PROCESS
+======================
+
+Before modifying anything:
+
+1. Inspect the existing footer component.
+2. Identify the existing social icon implementation.
+3. Identify where "GUIDELOCKS" is defined/displayed.
+4. Make the smallest possible changes.
+5. Reuse the existing styling and icon components.
+
+Do NOT create a second footer.
+
+Do NOT duplicate social icons.
+
+Do NOT create unnecessary components.
+
+==================================================
+FINAL TEST
+==========
+
+After making the changes, run the application and verify:
+
+[ ] Website still starts successfully
+[ ] No TypeScript errors
+[ ] No console errors
+[ ] Footer looks visually unchanged except for requested additions
+[ ] First Instagram icon opens:
+https://www.instagram.com/vinayak.international12?igsh=Y2JiYmpjbWE5dW5x
+
+[ ] Second Instagram icon opens:
+https://www.instagram.com/vinayakinternational12?igsh=MWJwMXJncHBldW9lMg%3D%3D
+
+[ ] Email icon opens:
+mailto:info@vinayakexports.com
+
+[ ] Both Instagram icons are separate
+[ ] Email icon is clickable
+[ ] Existing Facebook link still works
+[ ] Existing LinkedIn link still works
+[ ] Existing YouTube link still works
+[ ] Mobile footer still works
+[ ] Footer responsive layout is not broken
+[ ] GUIDELOCKS has been changed to Vinayak International where appropriate
+[ ] No unrelated UI or functionality has changed
+
+IMPORTANT FINAL INSTRUCTION:
+
+This is an EXISTING WORKING PROJECT.
+
+Treat this as a small maintenance update, NOT a redesign.
+
+Make the minimum possible code changes required to complete the above requirements.

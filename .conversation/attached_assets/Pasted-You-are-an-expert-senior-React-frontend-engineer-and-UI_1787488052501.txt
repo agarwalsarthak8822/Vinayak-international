@@ -1,0 +1,1302 @@
+You are an expert senior React frontend engineer and UI/UX developer.
+
+Build a complete, production-quality website for a security hardware company called **GUIDELOCKS**, owned by **Vinayak International**.
+
+I have uploaded two important files into this Replit project:
+
+1. A website screenshot:
+
+   * Use this as the PRIMARY UI/UX and visual reference.
+   * Recreate its overall layout, spacing, visual hierarchy, colors, typography, cards, hero section, statistics section, product section, footer, etc.
+
+2. `CARBON Brass PDF.pdf`
+
+   * This is the actual product catalog.
+   * Use it as the SOURCE OF TRUTH for product images, categories and product codes.
+   * Do not invent product codes or product specifications.
+
+====================================================
+CRITICAL REQUIREMENTS
+=====================
+
+This must NOT be a static HTML mockup.
+
+Build a REAL, FUNCTIONAL React website.
+
+Every visible interactive element must actually work.
+
+Do not leave:
+
+* Dead buttons
+* Fake navigation
+* Fake search
+* Non-functional forms
+* Broken product cards
+* Placeholder buttons
+* Console errors
+* Broken routes
+* Broken images
+
+After implementation, run the project, test it, identify errors and fix them.
+
+If something doesn't work, fix the code instead of simply telling me that it doesn't work.
+
+====================================================
+TECH STACK
+==========
+
+Use:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router
+* Lucide React icons
+
+Use modern React functional components and hooks.
+
+Do NOT use Next.js.
+
+Do NOT use a backend unless it is genuinely required.
+
+For now, product data can be stored locally in structured TypeScript/JSON data.
+
+Keep the architecture ready for a future backend/API.
+
+====================================================
+BRAND
+=====
+
+Customer-facing brand:
+
+GUIDELOCKS
+
+Tagline:
+
+Security Solutions
+
+Company:
+
+Vinayak International
+
+Phone:
+
++91 9897627670
+
+Email:
+
+[info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+Location:
+
+Aligarh, Uttar Pradesh, India
+
+Address:
+
+D-114/115, Sector-1,
+UPSIDC, Industrial Area,
+Talanagri, Ramghat Road,
+Aligarh - 202001,
+Uttar Pradesh, India
+
+Business Hours:
+
+Mon - Sat: 9:00 AM - 8:00 PM
+
+====================================================
+IMPORTANT BRAND RULE
+====================
+
+The uploaded screenshot is from another brand.
+
+Use the screenshot ONLY for:
+
+* Layout
+* UI structure
+* Visual style
+* Spacing
+* Section hierarchy
+* Colors
+* Typography
+* Card design
+* Hero composition
+* Navigation structure
+* Product grid structure
+
+DO NOT copy the screenshot's:
+
+* Brand name
+* Logo
+* Company information
+* Product names
+* Contact details
+
+The website must say:
+
+GUIDELOCKS
+
+Security Solutions
+
+and use:
+
+Vinayak International
+
+for the company.
+
+====================================================
+PRODUCT CATALOG RULE
+====================
+
+The uploaded PDF is the product catalog.
+
+Analyze the PDF before building the product section.
+
+Use the PDF to determine:
+
+* Product categories
+* Product codes
+* Product images
+* Category/product relationships
+
+The product code is extremely important.
+
+For example, the catalog contains codes such as:
+
+2502
+2504
+2513
+2507
+2503
+2509
+2512
+2510
+2514
+2500
+2501
+
+It also contains:
+
+2602
+2603
+2600
+2601
+2607
+2608
+2604
+2605
+2606
+2609
+
+and:
+
+3402
+3403
+3400
+3404
+3405
+3407
+3408
+3409
+3406
+3410
+3401
+3411 A
+3411 B
+
+These codes must be associated with the correct images from the PDF.
+
+DO NOT randomly associate images with codes.
+
+DO NOT invent product specifications.
+
+DO NOT fabricate technical information.
+
+====================================================
+PRODUCT CARD REQUIREMENT
+========================
+
+This is particularly important.
+
+The product card should visually prioritize the PRODUCT IMAGE.
+
+At the bottom of the product card, display the PRODUCT CODE.
+
+Example:
+
+---
+
+|                              |
+|      ACTUAL PDF IMAGE        |
+|                              |
+|            3404              |
+|                              |
+|      WhatsApp Inquiry        |
+--------------------------------
+
+The footer/bottom area of the product card should show the product code.
+
+Do NOT create long fake product descriptions.
+
+If the catalog only identifies an item by code, display the code.
+
+====================================================
+PROJECT STRUCTURE
+=================
+
+Create a clean structure similar to:
+
+src/
+components/
+Navbar.tsx
+Hero.tsx
+Stats.tsx
+Benefits.tsx
+CategorySection.tsx
+CategoryCard.tsx
+ProductSection.tsx
+ProductCard.tsx
+ProductFilters.tsx
+ProductDetails.tsx
+AboutSection.tsx
+OfferSection.tsx
+ProductShowcase.tsx
+Testimonials.tsx
+Newsletter.tsx
+Footer.tsx
+WhatsAppButton.tsx
+QuoteModal.tsx
+
+pages/
+Home.tsx
+Products.tsx
+Category.tsx
+About.tsx
+Contact.tsx
+
+data/
+products.ts
+categories.ts
+
+types/
+product.ts
+
+assets/
+
+Use reusable components.
+
+Do not duplicate large blocks of JSX.
+
+====================================================
+PAGE ROUTES
+===========
+
+Create these routes:
+
+/
+/products
+/category/:category
+/product/:code
+/about
+/contact
+
+Also create a simple 404 page.
+
+Use React Router.
+
+All routes must work when navigated through the UI.
+
+====================================================
+NAVBAR
+======
+
+Recreate the screenshot's navbar style.
+
+White background.
+
+Left:
+
+GUIDELOCKS logo/brand
+
+Under or beside it:
+
+Security Solutions
+
+Navigation:
+
+Home
+Categories
+About Us
+Contact
+
+Search:
+
+Search products...
+
+Button:
+
+Get Quote
+
+Desktop:
+
+* Logo left
+* Navigation center
+* Search right
+* Quote button
+
+Mobile:
+
+* Logo
+* Hamburger menu
+* Mobile navigation drawer
+
+FUNCTIONALITY:
+
+Home → /
+
+Categories → /products
+
+About Us → /about
+
+Contact → /contact
+
+Get Quote → opens working quote modal
+
+Search:
+
+* Search product codes
+* Search categories
+* Search product names if available
+* Press Enter to search
+* Search button works
+* Show "No products found" when appropriate
+
+Mobile menu:
+
+* Opens/closes
+* Navigation works
+* Closes after selecting a route
+
+====================================================
+HERO SECTION
+============
+
+Recreate the screenshot's dark premium hero.
+
+Background:
+
+Near-black / charcoal.
+
+Add subtle:
+
+* orange glow
+* security-themed visual elements
+* very subtle GuideLocks watermark
+
+Do not make the background excessively complicated.
+
+Hero content:
+
+Badge:
+
+★ PREMIUM SECURITY SOLUTIONS
+
+Heading:
+
+Premium Quality Locks
+
+Large supporting heading:
+
+Mortise Locks
+
+Highlight:
+
+Excellence
+
+Description:
+
+Industry-leading mortise locks with superior craftsmanship and unmatched durability.
+
+Primary button:
+
+View Mortise Locks →
+
+Secondary button:
+
+View Catalog
+
+Primary button:
+→ Navigate to Mortise Locks category.
+
+View Catalog:
+→ Open the uploaded catalog PDF in a new browser tab.
+
+Do not make View Catalog a fake button.
+
+Right side:
+
+Create a premium product showcase card.
+
+Use an appropriate actual product image from the uploaded PDF.
+
+====================================================
+STATS SECTION
+=============
+
+Create the floating white stats card similar to the screenshot.
+
+Display:
+
+50K+
+LOCKS SOLD
+
+25+
+YEARS EXPERIENCE
+
+24/7
+SUPPORT
+
+Use:
+
+* White background
+* Rounded corners
+* Border
+* Shadow
+* Orange/gold numbers
+* Vertical separators
+
+Mobile:
+2 x 2 grid.
+
+====================================================
+BENEFITS
+========
+
+Create four benefit cards:
+
+100% Secure
+Premium quality locks with warranty
+
+Free Shipping
+On orders above ₹5,000
+
+Best Quality
+ISI certified products
+
+24/7 Support
+Dedicated customer service
+
+Use Lucide icons.
+
+====================================================
+CATEGORIES
+==========
+
+Heading:
+
+Our Categories
+
+Subheading:
+
+Browse By Category
+
+Description:
+
+Explore our wide range of premium security solutions designed for every need
+
+Use categories derived from the uploaded PDF.
+
+Categories include:
+
+Door Knockers
+
+BRASS DOOR FURNITURE
+
+CASEMENT STAY & FASTENERS
+
+Cabinet Hardware
+
+CURTAIN TIE BACK / HOLDS & ACCESSORIES
+
+SYMBOL PLAQUES
+
+COAT HOOKS
+
+ALPHA - NUMERALS
+
+ARTWARE
+
+Do not invent categories that aren't supported by the catalog.
+
+Each category card:
+
+* Image from PDF where possible
+* Category name
+* Product count if it can be reliably calculated
+* Short description
+* Arrow
+
+Example:
+
+Door Knockers
+Products
+Premium collection available
+
+Category card click:
+→ /category/:category
+
+"View All Categories":
+→ /products
+
+====================================================
+PRODUCT DATA
+============
+
+Create structured product data.
+
+Example TypeScript structure:
+
+interface Product {
+code: string;
+category: string;
+image: string;
+description?: string;
+}
+
+Do not add fields containing invented information.
+
+If the PDF doesn't provide:
+
+* Price
+* Material
+* Dimensions
+* Weight
+* Technical specifications
+
+then don't invent them.
+
+====================================================
+PRODUCTS PAGE
+=============
+
+Route:
+
+/products
+
+Heading:
+
+New Arrivals
+
+Subheading:
+
+Latest Products
+
+Description:
+
+Discover our newest collection of premium security solutions
+
+Create:
+
+* Search
+* Category filter
+* Sorting
+* Clear filters
+* Product grid
+
+Search should match:
+
+* Product code
+* Category
+* Product name if available
+
+Sorting:
+
+Code A-Z
+Code Z-A
+
+Category filter:
+
+All
+Door Knockers
+BRASS DOOR FURNITURE
+CASEMENT STAY & FASTENERS
+Cabinet Hardware
+CURTAIN TIE BACK / HOLDS & ACCESSORIES
+SYMBOL PLAQUES
+COAT HOOKS
+ALPHA - NUMERALS
+ARTWARE
+
+All filtering must actually work.
+
+====================================================
+PRODUCT CARD
+============
+
+Create a premium product card.
+
+Structure:
+
+Product Image
+
+Product Code
+
+WhatsApp Inquiry
+
+The code must be clearly visible.
+
+Card hover:
+
+* Slight lift
+* Image subtle zoom
+* Border/shadow transition
+
+Clicking the product:
+→ /product/:code
+
+====================================================
+PRODUCT DETAILS
+===============
+
+Route:
+
+/product/:code
+
+Display:
+
+* Large actual product image
+* Product code
+* Category
+* Available catalog information
+* WhatsApp Inquiry
+* Get Quote
+
+Do not fabricate specifications.
+
+If only a product code and image are available, that's enough.
+
+====================================================
+WHATSAPP
+========
+
+Every product must have:
+
+WhatsApp Inquiry
+
+button.
+
+Phone:
+
++919897627670
+
+When clicked, generate:
+
+Hello GuideLocks, I am interested in product code XXXX. Please share price and details.
+
+Replace XXXX with the actual product code.
+
+Use a properly URL-encoded WhatsApp link.
+
+The button must work on desktop and mobile.
+
+====================================================
+GET QUOTE
+=========
+
+Create a working quote modal.
+
+Fields:
+
+Name
+Company
+Email
+Phone
+Product Code
+Quantity
+Message
+
+Validation:
+
+* Name required
+* Valid email required
+* Valid phone required
+* Product code required
+* Quantity required
+
+On successful submission:
+
+Show:
+
+Thank you! Your quote request has been submitted.
+
+Also provide:
+
+Send via WhatsApp
+
+which creates a WhatsApp message containing the entered information.
+
+====================================================
+ABOUT PAGE
+==========
+
+Create /about.
+
+Heading:
+
+About Us
+
+Subheading:
+
+Trusted Security Solutions Since 1980
+
+Use this company information:
+
+"Vinayak International is a trusted name in the manufacturing and export of premium-quality door handles and mortise locks, delivering strength, security, and modern design to customers worldwide. With years of industry experience, we specialize in crafting durable hardware solutions that combine functionality with elegant aesthetics."
+
+Also include the provided information about:
+
+* Quality excellence
+* Advanced production technology
+* High-grade raw materials
+* Innovation
+* Precision engineering
+* Strict quality control
+* International standards
+* Corrosion resistance
+* Robust construction
+* Customized solutions
+* Competitive pricing
+* Timely delivery
+* Customer satisfaction
+
+Stats:
+
+25+
+Years Experience
+
+50K+
+Happy Customers
+
+500+
+Dealers Nationwide
+
+====================================================
+OFFER SECTION
+=============
+
+Create a section matching the screenshot.
+
+Heading:
+
+Limited Time Offer
+
+Main heading:
+
+Get Up To 30% OFF
+
+Text:
+
+On your first order!
+
+Coupon:
+
+SECURE30
+
+Feature badges:
+
+100% Original
+Free Delivery
+
+Button:
+
+Shop Now
+
+Countdown:
+
+Offer Ends In:
+
+Create a REAL countdown timer.
+
+Do not hardcode:
+
+23
+14
+56
+
+Use a future target date.
+
+When it reaches zero:
+
+Offer Expired
+
+====================================================
+PRODUCT SHOWCASE
+================
+
+Heading:
+
+Product Showcase
+
+Subheading:
+
+See Our Products in Action
+
+Description:
+
+Discover the quality and craftsmanship that sets our products apart
+
+Create an attractive product gallery using actual catalog images.
+
+Stats:
+
+10K+
+Happy Customers
+
+500+
+Products
+
+100%
+Authentic
+
+24/7
+Support
+
+====================================================
+TESTIMONIALS
+============
+
+Create a testimonial carousel.
+
+Heading:
+
+Testimonials
+
+Subheading:
+
+What Our Clients Say
+
+Testimonials:
+
+"Reliable and trustworthy. Have been a customer for 5 years. Their locks are durable and provide excellent security."
+
+Anita Gupta
+Verified Customer
+
+"Excellent quality locks! I've been using their mortise locks for over 3 years now. The build quality is outstanding and customer service is top-notch."
+
+Rajesh Kumar
+Verified Customer
+
+"Very satisfied with my purchase. The digital lock was easy to install and works perfectly. Highly recommend their products to everyone."
+
+Priya Sharma
+Verified Customer
+
+Functionality:
+
+* Previous
+* Next
+* Auto-slide
+* Responsive
+
+====================================================
+NEWSLETTER
+==========
+
+Create:
+
+Subscribe to Our Newsletter
+
+Get the latest updates, offers, and security tips delivered to your inbox.
+
+Input:
+
+Enter your email
+
+Button:
+
+Subscribe
+
+Validation:
+
+* Required
+* Valid email
+
+Success:
+
+You're subscribed successfully!
+
+====================================================
+CONTACT PAGE
+============
+
+Create /contact.
+
+Display:
+
+Vinayak International
+
+D-114/115, Sector-1,
+UPSIDC, Industrial Area,
+Talanagri, Ramghat Road,
+Aligarh - 202001,
+Uttar Pradesh, India
+
++91 9897627670
+
+[info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+Mon - Sat: 9:00 AM - 8:00 PM
+
+Contact form:
+
+Name
+Email
+Phone
+Company
+Message
+
+Validate everything properly.
+
+After submission:
+
+Thank you! We will contact you shortly.
+
+====================================================
+FOOTER
+======
+
+Create a dark footer.
+
+GUIDELOCKS
+
+Security Solutions
+
+Description:
+
+India's leading manufacturer and supplier of premium quality locks and security solutions. Protecting homes and businesses since 1980.
+
+Products:
+
+Raino Locks
+Mortise Locks
+Furniture Locks
+Digital Locks
+Padlocks
+
+Company:
+
+About Us
+Our Team
+Careers
+Blog
+Press
+Support
+
+Contact:
+
+FAQ
+Warranty
+Shipping
+Returns
+
+Contact information:
+
+D-114/115, Sector-1,
+UPSIDC, Industrial Area,
+Talanagri, Ramghat Road,
+Aligarh - 202001,
+Uttar Pradesh, India
+
++91 98976 27670
+
+[info@vinayakexports.com](mailto:info@vinayakexports.com)
+
+Mon - Sat: 9:00 AM - 8:00 PM
+
+Social icons:
+
+Instagram
+Facebook
+LinkedIn
+YouTube
+
+Payment methods:
+
+Visa
+Mastercard
+UPI
+NetBanking
+
+Copyright:
+
+© 2026 Vinayak International. All rights reserved.
+
+Privacy Policy
+Terms of Service
+
+Designed & Developed by ❤️ Digimart 360
+
+====================================================
+FLOATING WHATSAPP
+=================
+
+Create a fixed WhatsApp button at bottom-right.
+
+Number:
+
++919897627670
+
+Default message:
+
+Hello GuideLocks, I would like to know more about your security products.
+
+Must open WhatsApp correctly.
+
+====================================================
+RESPONSIVE DESIGN
+=================
+
+The website must work properly at:
+
+1920px
+1440px
+1024px
+768px
+480px
+375px
+
+Desktop:
+Match screenshot layout closely.
+
+Tablet:
+Adapt grid and spacing.
+
+Mobile:
+
+* Hamburger menu
+* Single-column hero
+* Product showcase below hero
+* 2-column product grid where appropriate
+* 1-column category grid if necessary
+* Stats become 2x2
+* Footer stacks
+* Search becomes full width
+* No horizontal scrolling
+
+====================================================
+DESIGN
+======
+
+Use a premium security/industrial visual style.
+
+Primary:
+
+#111111
+#0B0B0B
+
+Accent:
+
+Warm orange/gold similar to:
+
+#C9822B
+
+Background:
+
+#FFFFFF
+#F7F7F7
+
+Use:
+
+* Rounded cards
+* Thin borders
+* Subtle shadows
+* Clean typography
+* Strong headings
+* Orange accent buttons
+* Dark hero
+* Premium product photography
+
+Do not overuse gradients.
+
+Do not make it look like a generic SaaS dashboard.
+
+It should look like a premium security hardware manufacturer website.
+
+====================================================
+ANIMATIONS
+==========
+
+Use subtle animations:
+
+* Smooth scrolling
+* Card hover
+* Product image hover zoom
+* Button transitions
+* Section reveal
+* Mobile menu transition
+* Product detail transition
+* Testimonial carousel
+* Navbar transitions
+
+Keep animations professional.
+
+====================================================
+ACCESSIBILITY
+=============
+
+Implement:
+
+* Semantic HTML
+* Alt text
+* Keyboard navigation
+* Focus states
+* Accessible labels
+* ARIA labels where necessary
+* Good color contrast
+
+====================================================
+IMPORTANT: USE THE UPLOADED FILES
+=================================
+
+Before implementing the product catalog:
+
+1. Inspect the uploaded PDF.
+2. Determine all categories.
+3. Determine all product codes.
+4. Extract/use product images from the PDF where technically possible.
+5. Build the product data from that information.
+6. Keep the product-code-to-image relationship correct.
+
+If direct PDF image extraction is difficult in the browser, process the PDF during development and create optimized local image assets in:
+
+public/products/
+
+Organize them logically, for example:
+
+public/products/door-knockers/
+public/products/brass-door-furniture/
+public/products/casement-stay-fasteners/
+public/products/cabinet-hardware/
+public/products/curtain-tie-back/
+public/products/symbol-plaques/
+public/products/coat-hooks/
+public/products/alpha-numerals/
+public/products/artware/
+
+Use the actual catalog images.
+
+Do NOT simply put the PDF itself inside every product card.
+
+====================================================
+IMPLEMENTATION ORDER
+====================
+
+Do this in stages.
+
+STAGE 1:
+
+* Set up React + Vite + TypeScript
+* Install dependencies
+* Create routing
+* Create design system
+
+STAGE 2:
+
+* Build Navbar
+* Hero
+* Stats
+* Benefits
+* Footer
+
+STAGE 3:
+
+* Process PDF
+* Create product/category data
+* Extract product images
+* Build product cards
+
+STAGE 4:
+
+* Build Products page
+* Search
+* Filters
+* Sorting
+* Product details
+
+STAGE 5:
+
+* About
+* Contact
+* Quote modal
+* Newsletter
+* Testimonials
+* Offer countdown
+
+STAGE 6:
+
+* WhatsApp functionality
+* Responsive design
+* Accessibility
+
+STAGE 7:
+
+* Run application
+* Test every route
+* Test every button
+* Test forms
+* Test search
+* Test filters
+* Test WhatsApp
+* Test mobile layout
+* Fix all errors
+
+====================================================
+FINAL QA CHECKLIST
+==================
+
+Before declaring the project finished, verify:
+
+[ ] React app runs successfully
+[ ] No TypeScript errors
+[ ] No console errors
+[ ] No broken imports
+[ ] No broken images
+[ ] Navbar works
+[ ] Mobile menu works
+[ ] Home works
+[ ] Categories works
+[ ] Products page works
+[ ] Category filtering works
+[ ] Search works
+[ ] Sorting works
+[ ] Clear filters works
+[ ] Product detail works
+[ ] Product code is correct
+[ ] Product image matches product code
+[ ] WhatsApp inquiry works
+[ ] Get Quote works
+[ ] Quote validation works
+[ ] Contact form works
+[ ] Newsletter works
+[ ] Catalog button works
+[ ] Countdown works
+[ ] Testimonials work
+[ ] Footer links work
+[ ] 404 page works
+[ ] Responsive layout works
+[ ] No horizontal overflow
+[ ] Website visually matches the uploaded screenshot
+[ ] GuideLocks branding is used instead of the screenshot's original branding
+
+Do not stop after generating the first version.
+
+Run the application, inspect the result, fix problems and iterate until the website is polished and functional.
+
+The final result should look like a real commercial website for:
+
+GUIDELOCKS
+Security Solutions
+Vinayak International
+
+not a generic AI-generated website.
