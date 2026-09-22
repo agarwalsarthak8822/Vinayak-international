@@ -17,12 +17,13 @@ function whatsapp(message: string) {
 }
 
 function Logo({ inverted = false }: { inverted?: boolean }) {
-  return <Link href="/" className={`group inline-flex items-center gap-3 ${inverted ? "text-[#f4efe5]" : "text-[#2b2118]"}`} data-testid="link-logo">
-    <span className="relative flex h-10 w-10 items-center justify-center border border-[#bf7e2e] text-[#bf7e2e]">
-      <span className="absolute h-5 w-5 rounded-full border border-current" />
-      <span className="relative font-mono text-[11px] font-medium">G</span>
-    </span>
-    <span className="leading-none"><strong className="block whitespace-nowrap text-[15px] tracking-[.1em] sm:text-[18px] sm:tracking-[.16em]">Vinayak International</strong><small className="mt-1 block font-mono text-[8px] tracking-[.25em] text-[#bf7e2e]">SECURITY SOLUTIONS</small></span>
+  return <Link href="/" className={`group inline-flex ml-2 items-center ${inverted ? "text-[#f4efe5]" : "text-[#2b2118]"}`} data-testid="link-logo">
+    <img
+      src="/logo.png"
+      alt="Vinayak International logo"
+      className="h-14 w-auto object-contain sm:h-16"
+      
+    />
   </Link>;
 }
 
